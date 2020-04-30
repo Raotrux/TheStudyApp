@@ -1,0 +1,22 @@
+{
+  "name": "dex-the-study-app",
+  "version": "1.0.1",
+  "description": "A flashcard and quiz application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raotrux/TheStudyApp.git"
+  },
+  "author": "Group C (Poul, Andrew, Sherrod, Ray, Brandan)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raotrux/TheStudyApp/issues"
+  },
+  "homepage": "https://github.com/Raotrux/TheStudyApp#readme",
+  "dependencies": {
+    "create-react-app": "^3.4.1"
+  }
+}
