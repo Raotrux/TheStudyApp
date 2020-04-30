@@ -1,25 +1,20 @@
-import React from 'react';
-import dexv2 from './dexv2.svg';
+import React, {Component} from 'react';
 import './App.css';
-import NavBar from './NavBar';
+import NavBar from './Components/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={dexv2} className="App-logo" alt="logo" />
-        <NavBar></NavBar>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <NavBar></NavBar>
+        </header>
+        <div className="App-Body">
+          <p>Pretend there is something here.</p>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;

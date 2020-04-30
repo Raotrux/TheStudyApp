@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
+import dexv2 from './dexv2.svg';
 
 class NavBar extends Component{
     render(){
         return (
             <React.Fragment>
               <nav className="navbar">
-                <a className="navbar-icon" href="#">
-                  <h1>Total Items <span className="badge">{this.props.totalItems}</span></h1>
-                </a>
+              <img src={dexv2} alt="Owl"></img>
+              <ul>
+                <li>Search
+                </li>
+                <li>Browse
+                </li>
+                <li>Create
+                </li>
+              </ul>
               </nav>
             </React.Fragment>
           );
