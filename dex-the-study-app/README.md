@@ -1,7 +1,7 @@
 ### Front End - Brandan Owens
 ### Back End - Andrew Boyer
 ### MiddleWare - Raymond Wu
-
+### Back End - Poul Nichols
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
