@@ -20,6 +20,7 @@ mongoose.connect('mongodb://localhost/'...name of the cluster', {useNewUrlParser
 
 //data types of the flashcard, will add more when we figure out what required
 const flashCardSchema = new mongoose.Schema({
+    setNumber: Number,
     flashCardNumber: Number,
     flashCardTerm: String,
     flashCardDefinition: String,
@@ -41,15 +42,15 @@ app.get('/', cors(), (req, res) => {
 
 //Search page
 app.get('/search',cors(),(req,res) => {
-    res.send('This the search page');
+    res.send('This is the search page');
 })
 
 //Browse Page
 app.get('/browse',cors(),(req,res) => {
-    res.send('This the search page');
+    res.send('This is the browse page');
 })
 
 //Create Page
 app.get('/create',cors(),(req,res) => {
-    res.send('This the search page');
+    res.send('This is the create page');
 })
