@@ -18,27 +18,66 @@ mongoose.connect('mongodb://localhost/'...name of the cluster', {useNewUrlParser
 
 */
 
-//data types of the flashcard, will add more when we figure out what required
+//data types of the flashcard, not final, might require some changes
 const flashCardSchema = new mongoose.Schema({
-    setNumber: Number,
+    author: String,
+    name:String,
+    edited:false,
+    flashCardSet: {
+        frontData: String,
+        backData: String,
+        creationDataTime:{type: Date, default:Date.now},
+        size:{
+            x: Number,
+            y: Number,
+            uom: String
+        }
+
+    }
+    
+    /*
     flashCardNumber: Number,
     flashCardTerm: String,
     flashCardDefinition: String,
     date: Date
+    */
 });
 
-const flashCard = mongoose.model('flashCard', flashCardSchema);
+
+
+
+
+const flashCard = mongoose.model('flashcards', flashCardSchema);
 
 //Port of the express server
 const port = 3200;
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
 
-//Homepage port, probably need to change
+
+//Homepage port
 app.get('/', cors(), (req, res) => {
     res.send('Hello World')
 })
 
+//create a flash card set, not final, still working on it
+//use Postman to try adding data
+app.post('/create', cors(), (req,res) =>{
+    console.log(JSON.stringify(req));
+    var set = new flashCard({
+        author = req.body.author,
+        name = req.body.name,
+        flashCardSet: {
+            frontData: req.body.frontData,
+            backData: req.body.backData,
+        }
+    })
+    set.save(function(err,result){
+        if(err){
+            return next(err)}
+            res.status(201).json(result)     
+    });  
+});
 
 //Search page
 app.get('/search',cors(),(req,res) => {
